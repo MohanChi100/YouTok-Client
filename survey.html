@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="survey.css">
+    <script src="survey.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <h1>Survey</h1>
+
+    <form id="surveyForm">
+        <div class="block">
+            <p class="question">
+                1. How many videos do you think you have watched during this session?
+                <input type="number" id="videoCount" min="0" required>
+            </p>
+            <p class="question">
+                2. How much time do you think you have watched during this session? (in minutes)
+                <input type="number" id="watchTime" min="0" required>
+            </p>
+        </div>
+
+        <div class="block">
+            <p class="question">
+                3. Describe the last video you watched. (optional)
+                <textarea id="lastVideoDescription" placeholder="Describe the video"></textarea>
+            </p>
+            <p class="question">
+                4. What keywords do you think best describe today's videos? (optional)
+                <input type="text" id="sessionKeywords" placeholder="Enter keywords">
+            </p>
+        </div>
+
+        <div class="block">
+            <p class="question">
+                5. How satisfied were you with the video recommendations you received today? On a scale from 1 (not satisfied at all) to 5 (extremely satisfied), please rate your experience.
+            <div class="rating">
+                <input type="radio" id="rating-1" name="rating" value="1"><label for="rating-1"></label><span>1</span>
+                <input type="radio" id="rating-2" name="rating" value="2"><label for="rating-2"></label><span>2</span>
+                <input type="radio" id="rating-3" name="rating" value="3"><label for="rating-3"></label><span>3</span>
+                <input type="radio" id="rating-4" name="rating" value="4"><label for="rating-4"></label><span>4</span>
+                <input type="radio" id="rating-5" name="rating" value="5"><label for="rating-5"></label><span>5</span>
+            </div>
+            </p>
+            <p class="question">
+                6. Could you provide some keywords related to topics or types of videos you're interested in exploring more?
+                <input type="text" id="keywordInput" placeholder="Enter a keyword">
+                <button type="button" id="addKeyword">Add Keyword</button>
+            <ul id="keywordsList"></ul>
+            </p>
+            <p class="question">
+                7. Briefly describe the video you were most interested in that you watched today. (optional)
+                <textarea id="favoriteVideoDescription" placeholder="Describe the video"></textarea>
+            </p>
+        </div>
+
+        <button type="submit" class="submit-button">Submit Survey</button>
+    </form>
+</div>
+</body>
+</html>

@@ -20,6 +20,9 @@ function getQueryParam(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+// Store username when it is available
+sessionStorage.setItem('username', getQueryParam('username'));
+
 // Get the username from the URL parameter
 var username = getQueryParam('username');
 
@@ -32,6 +35,12 @@ console.log("username in loop: " + test_uid);
 //     'Pb5UdTEh0l0', 'cugxnHLKo_Y', 'yhZTgFp4uDs', 'tex8V4he3AI', 'l3Y1sWE_Yr8',
 // ];
 // var youtube_api_key = 'AIzaSyAjSa4cR1Li5cWtE3jChY8piErqi0USjqM'
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.getElementById('surveyBanner').style.display = 'block';
+    }, 15000); // 10 minutes in milliseconds
+});
 
 function getWeekNumber(startDate) {
     let start = new Date(startDate);
